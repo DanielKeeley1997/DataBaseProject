@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2017 at 07:55 PM
+-- Generation Time: Apr 16, 2017 at 08:43 PM
 -- Server version: 5.7.14
 -- PHP Version: 5.6.25
 
@@ -53,7 +53,11 @@ CREATE TABLE `banned_users` (
 --
 
 INSERT INTO `banned_users` (`banned_id`, `banned_email`, `banned_reason`) VALUES
-(15112345, '15112345@studentmail.ul.ie', 'Spam');
+(14759827, '14759827@studentmail.ul.ie', 'Only posts memes'),
+(15112345, '15112345@studentmail.ul.ie', 'Spam'),
+(15244486, '15244486@studentmail.ul.ie', 'Inappropriate behaviour'),
+(15275596, '15275596@studentmail.ul.ie', 'Spam'),
+(15486537, '15486537@studentmail.ul.ie', 'Spam');
 
 -- --------------------------------------------------------
 
@@ -71,7 +75,12 @@ CREATE TABLE `claimed_tasks` (
 --
 
 INSERT INTO `claimed_tasks` (`task_id`, `claimed_by_ul_id`) VALUES
-(2, 15167524);
+(1, 15254785),
+(2, 15167524),
+(3, 14775461),
+(4, 15478859),
+(5, 15442839),
+(6, 15228965);
 
 -- --------------------------------------------------------
 
@@ -82,6 +91,17 @@ INSERT INTO `claimed_tasks` (`task_id`, `claimed_by_ul_id`) VALUES
 CREATE TABLE `completed_tasks` (
   `task_id` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `completed_tasks`
+--
+
+INSERT INTO `completed_tasks` (`task_id`) VALUES
+(1),
+(2),
+(3),
+(4),
+(5);
 
 -- --------------------------------------------------------
 
@@ -98,7 +118,11 @@ CREATE TABLE `deleted_tasks` (
 --
 
 INSERT INTO `deleted_tasks` (`task_id`) VALUES
-(3);
+(1),
+(2),
+(3),
+(5),
+(6);
 
 -- --------------------------------------------------------
 
@@ -109,6 +133,17 @@ INSERT INTO `deleted_tasks` (`task_id`) VALUES
 CREATE TABLE `failed_tasks` (
   `task_id` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `failed_tasks`
+--
+
+INSERT INTO `failed_tasks` (`task_id`) VALUES
+(1),
+(2),
+(3),
+(4),
+(5);
 
 -- --------------------------------------------------------
 
@@ -142,6 +177,17 @@ CREATE TABLE `is_user_moderator` (
   `ul_id` int(8) NOT NULL,
   `is_moderator` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `is_user_moderator`
+--
+
+INSERT INTO `is_user_moderator` (`ul_id`, `is_moderator`) VALUES
+(15109214, 0),
+(15123492, 1),
+(15134562, 0),
+(15172514, 0),
+(15189082, 0);
 
 -- --------------------------------------------------------
 
@@ -265,7 +311,11 @@ CREATE TABLE `user_favourite_tags` (
 --
 
 INSERT INTO `user_favourite_tags` (`ul_id`, `favourite_tag_1`, `favourite_tag_2`, `favourite_tag_3`, `favourite_tag_4`) VALUES
-(15134562, 1, 4, 6, 10);
+(12345678, 5, 8, 6, 4),
+(15109214, 7, 8, 9, 4),
+(15123492, 1, 5, 8, 9),
+(15134562, 1, 4, 6, 10),
+(15162307, 7, 9, 4, 1);
 
 -- --------------------------------------------------------
 
@@ -286,7 +336,11 @@ CREATE TABLE `user_most_recent_viewed` (
 --
 
 INSERT INTO `user_most_recent_viewed` (`ul_id`, `most_recent_viewed_task_1`, `most_recent_viewed_task_2`, `most_recent_viewed_task_3`, `most_recent_viewed_task_4`) VALUES
-(15134562, 1, 4, 6, 3);
+(12345678, 2, 5, 6, 3),
+(15109214, 1, 2, 5, 4),
+(15134562, 1, 4, 6, 3),
+(15162307, 6, 2, 3, 4),
+(15189082, 6, 2, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -298,6 +352,17 @@ CREATE TABLE `user_reputation` (
   `ul_id` int(8) NOT NULL,
   `reputation` int(3) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user_reputation`
+--
+
+INSERT INTO `user_reputation` (`ul_id`, `reputation`) VALUES
+(15109214, 63),
+(15123492, 21),
+(15134562, 1),
+(15172514, 39),
+(15189082, 100);
 
 -- --------------------------------------------------------
 
