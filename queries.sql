@@ -22,12 +22,15 @@ WHERE(created <= '2017-04-10 00:00:00');
 
 //////////////////////////////////////
 
-create view task_summary AS 
+create view task_summary1 AS 
 select task_title, task_description 
 from task 
 where task_pages < 1000
 
-select * from task_summary
+create view task_summary2 AS 
+select task_title, task_description 
+from task 
+where task_words < 7000;
 
 //////////////////////////////////////
 
