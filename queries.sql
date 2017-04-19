@@ -32,4 +32,13 @@ select * from task_summary
 //////////////////////////////////////
 
 create index idx_student
-on verified_user(first_name, last_name)      		
+on verified_user(first_name, last_name); 
+
+create index idx_login_details
+on verified_user(ul_id, password);
+
+create index idx_task_type
+on task(task_type);
+
+create index_task
+on task(task_title, task_description);      		
