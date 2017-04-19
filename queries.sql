@@ -40,5 +40,5 @@ on verified_user(ul_id, password);
 create index idx_task_type
 on task(task_type);
 
-create index_task
+create index idx_task
 on task(task_title, task_description);      		
