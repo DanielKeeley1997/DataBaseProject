@@ -20,19 +20,17 @@ SELECT created
 FROM task
 WHERE(created <= '2017-04-10 00:00:00');
 
-//////////////////////////////////////
 
 create view task_summary1 AS 
 select task_title, task_description 
 from task 
-where task_pages < 1000
+where task_pages < 1000;
 
 create view task_summary2 AS 
 select task_title, task_description 
 from task 
 where task_words < 7000;
 
-//////////////////////////////////////
 
 create index idx_student
 on verified_user(first_name, last_name); 
